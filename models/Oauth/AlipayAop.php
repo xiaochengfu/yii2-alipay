@@ -59,7 +59,7 @@ class AlipayAop
             $request = new \AlipayFundTransToaccountTransferRequest();
             $request->setBizContent("{" .
                 "    \"out_biz_no\":\"" . $osn . "\"," .
-                "    \"payee_type\":\"ALIPAY_LOGONID\"," .//ALIPAY_USERID为userid打款
+                "    \"payee_type\":\"ALIPAY_USERID\"," .//ALIPAY_USERID为userid打款
                 "    \"payee_account\":\"" . $payee_account . "\"," .
                 "    \"amount\":\"" . $amount . "\"," .
                 // "    \"payer_real_name\":\"fpypvx4005@sandbox.com\"," .

@@ -9,6 +9,7 @@ namespace xiaochengfu\alipay\controllers;
 
 use xiaochengfu\alipay\models\Instant\AlipayNotify;
 use xiaochengfu\alipay\models\Instant\AlipaySubmit;
+use xiaochengfu\alipay\models\Oauth\AlipayAop;
 use Yii;
 use yii\web\Controller;
 use xiaochengfu\alipay\models\AliPayUtility;
@@ -31,7 +32,7 @@ class DefaultController extends Controller
         $out_trade_no = AliPayUtility::createOrderSn();
 
         //订单名称，必填
-        $subject = '绑定支付宝账号打款验证';
+        $subject = '小程府整合demo';
 
         //付款金额，必填
         $total_fee = 0.01;
@@ -72,6 +73,49 @@ class DefaultController extends Controller
     }
 
     /**
+     * @return mixed
+     * 引导扫码授权页
+     */
+    public function actionOauth(){
+        $appId = Yii::$app->params['aliPayOauthConfig']['appId'];
+        $callback = Yii::$app->params['aliPayOauthConfig']['callBack'];
+        $url = "https://openauth.alipay.com/oauth2/publicAppAuthorize.htm?app_id=$appId&scope=auth_user&redirect_uri=$callback";
+        return $this->render('oauth',['url'=>$url]);
+    }
+
+    /**
+     * author：hp
+     * user：hp
+     * @throws Exception
+     * 支付宝授权验证回调，获取依次auth_code，user_id
+     */
+    public function actionAliCallback(){
+        $oauth = Yii::$app->request->get();
+        $Aop = new AlipayAop();
+        $msg = $Aop->AlipaySystemOauthTokenRequest($oauth);
+        if($msg['status'] == 1){
+            $userInfo = $Aop->AlipayUserInfoShareRequest($msg['message']['access_token']);
+            var_dump($userInfo);
+        }
+    }
+
+    /**
+     * @return array
+     * 支付宝单笔转账
+     */
+    public function actionAliPayTs(){
+        $cashInfo = [
+            'payee_account'=>'你看支付宝userid',//卡号
+            'payee_real_name'=>'真实姓名',//姓名
+            'amount'=>0.1
+        ];
+        $Aop = new AlipayAop();
+        $result = $Aop->AlipayFundTransToaccountTransfer(AliPayUtility::createOrderSn(),$cashInfo['payee_account'],$cashInfo['amount'],$cashInfo['payee_real_name']);
+        var_dump($result);
+    }
+
+
+    /**
      * author:hp
      * user:hp
      * 同步绑定验证页
@@ -108,7 +152,7 @@ class DefaultController extends Controller
             } else {
                 echo "trade_status=" . $_GET['trade_status'];
             }
-            echo '账号已绑定成功！';
+            echo '支付宝打款成功！';
 
 //            echo "验证成功<br />";
 
