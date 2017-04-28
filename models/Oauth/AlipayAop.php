@@ -1,5 +1,5 @@
 <?php
-namespace xiaochengfu\alipay\Oauth;
+namespace xiaochengfu\alipay\models\Oauth;
 require_once 'AopClient.php';
 require_once 'AlipayFundTransToaccountTransferRequest.php';
 require_once 'AlipaySystemOauthTokenRequest.php';

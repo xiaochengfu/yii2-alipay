@@ -1,5 +1,5 @@
 <?php
-namespace xiaochengfu\alipay\Instant;
+namespace xiaochengfu\alipay\models\Instant;
 /* *
  * 类名：AlipayNotify
  * 功能：支付宝通知处理类

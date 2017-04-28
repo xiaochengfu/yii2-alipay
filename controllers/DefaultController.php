@@ -7,11 +7,11 @@
  */
 namespace xiaochengfu\alipay\controllers;
 
-use xiaochengfu\alipay\Instant\AlipayNotify;
-use xiaochengfu\alipay\Instant\AlipaySubmit;
+use xiaochengfu\alipay\models\Instant\AlipayNotify;
+use xiaochengfu\alipay\models\Instant\AlipaySubmit;
 use Yii;
 use yii\web\Controller;
-use xiaochengfu\migrate\models\AliPayUtility;
+use xiaochengfu\alipay\models\AliPayUtility;
 
 class DefaultController extends Controller
 {

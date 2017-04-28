@@ -5,7 +5,7 @@
  * DateTime: 2017/04/15 11:30
  * Description:
  */
-namespace xiaochengfu\migrate\models;
+namespace xiaochengfu\alipay\models;
 
 use yii\base\Model;
 

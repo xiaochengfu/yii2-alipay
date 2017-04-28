@@ -1,5 +1,5 @@
 <?php
-namespace xiaochengfu\alipay\Instant;
+namespace xiaochengfu\alipay\models\Instant;
 /* *
  * 类名：AlipaySubmit
  * 功能：支付宝各接口请求提交类
