@@ -7,15 +7,15 @@ Once the extension is installed, simply use it in your code by :
 网页端使用:
 
 1.在 config/main.php 添加如下配置
-
+```
 'modules' => [
         'alipay' => [
             'class' => 'xiaochengfu\alipay\Module',
         ]
     ],
-
+```
 在config/params.php添加
-
+```
 return [
     'aliPay_rsa_config' => [
         'partner' => '你的商户id',
@@ -35,3 +35,4 @@ return [
         'exter_invoke_ip' => "",
     ],
 ];
+```
