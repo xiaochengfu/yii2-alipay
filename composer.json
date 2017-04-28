@@ -1,0 +1,27 @@
+{
+    "name": "xiaochengfu/yii2-alipay",
+    "description": "支付宝的手机网站支付、扫码即时到账付款、Oauth授权、单笔转账整合",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"],
+    "license": "BSD-3-Clause",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://github.com/xiaochengfu/yii2-alipay/issues",
+        "source": "https://github.com/xiaochengfu/yii2-alipay"
+    },
+    "authors": [
+        {
+            "name": "houpeng",
+            "email": "xcf-hp@Foxmail.com",
+            "homepage": "http://www.xiaochengfu.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "xiaochengfu\\alipay\\": ""
+        }
+    }
+}
