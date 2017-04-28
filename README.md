@@ -57,4 +57,28 @@ http://域名/alipay/defautl/oauth
 ```
 http://域名/alipay/default/ali-pay-ts
 ```
-3.如有疑问，可联系qq：1033426413，验证回答：支付宝接入
+3.如果想将业务代码移到backend项目下，可修改`vendor/xiaochengfu/yii2-alipay/Module.php`下的命名空间，要在backend/controllers下创建名为ZfbControllers的控制器
+
+```
+namespace xiaochengfu\alipay;
+
+class Module extends \yii\base\Module
+{
+    public $controllerNamespace = 'backend\controllers';
+    public $defaultRoute = 'zfb';
+
+    public function init()
+    {
+        parent::init();
+
+        // custom initialization code goes here
+    }
+}
+```
+
+此时以下两种进入方式均可：
+```
+http://域名/alipay
+http://域名/zfb
+```
+4.如有疑问，可联系qq：1033426413，验证回答：支付宝接入
