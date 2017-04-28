@@ -14,9 +14,10 @@ Once the extension is installed, simply use it in your code by :
         ]
     ],
 ```
-在config/params.php添加
+手机网站支付与单笔转账配置不同，所以在config/params.php添加
 ```
 return [
+    //手机网站支付配置
     'aliPay_rsa_config' => [
         'partner' => '你的商户id',
         'seller_id' => '你的商户id',
@@ -34,5 +35,26 @@ return [
         'anti_phishing_key' => "",
         'exter_invoke_ip' => "",
     ],
+    //单笔转账配置，appid要在支付宝开放平台添加应用，私钥、公钥、回调地址均在开发平台设置
+    'aliPayOauthConfig' =>[
+        'appId'=>'xxxx',
+        'callBack'=>'http://xxx/alipay/default/ali-callback',//扫码授权回调地址
+        'rsaPrivateKey' =>'你的私钥',
+        'alipayrsaPublicKey' => '你的公钥'
+    ]
 ];
 ```
+2.进入链接
+扫码即时到账、手机网站支付进入方式：
+```
+http://域名/alipay
+```
+扫码授权进入方式：
+```
+http://域名/alipay/defautl/oauth
+```
+单笔转账进入方式：
+```
+http://域名/alipay/default/ali-pay-ts
+```
+3.如有疑问，可联系qq：1033426413，验证回答：支付宝接入
