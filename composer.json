@@ -4,7 +4,7 @@
     "type": "yii2-extension",
     "keywords": ["yii2","extension"],
     "license": "BSD-3-Clause",
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "support": {
         "issues": "https://github.com/xiaochengfu/yii2-alipay/issues",
         "source": "https://github.com/xiaochengfu/yii2-alipay"
