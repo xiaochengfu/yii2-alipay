@@ -4,6 +4,11 @@ Usage
 
 Once the extension is installed, simply use it in your code by :
 
+安装：
+```
+composer require xiaochengfu/yii2-alipay "v1.0.2"
+```
+
 网页端使用:
 
 1.在 config/main.php 添加如下配置
