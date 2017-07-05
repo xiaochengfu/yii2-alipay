@@ -86,4 +86,6 @@ class Module extends \yii\base\Module
 http://域名/alipay
 http://域名/zfb
 ```
-4.如有疑问，可联系qq：1033426413，验证回答：支付宝接入
+4.如有疑问，可在这里进行交流：
+https://github.com/xiaochengfu/yii2-alipay/issues/1
+可联系qq：1033426413，验证回答：支付宝接入，我会到交流区查看的
